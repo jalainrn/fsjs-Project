@@ -1,0 +1,26 @@
+[
+    {
+      "firstName": "Jose",
+      "lastName": "Rascon",
+      "email": "jose@mydomain.com",
+      "password": "1qaz"
+    },
+    {
+      "firstName": "Anisia",
+      "lastName": "Castro",
+      "email": "anisia@mydomain.com",
+      "password": "1qaz"
+    },
+    {
+      "firstName": "Paolo",
+      "lastName": "Castro",
+      "email": "paolo@mydomain.com",
+      "password": "1qaz"
+    },
+    {
+      "firstName": "Andre",
+      "lastName": "Rascon",
+      "email": "andre@mydomain.com",
+      "password": "1qaz"
+    }
+  ]

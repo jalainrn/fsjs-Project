@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Administrator",
+      "created_at:": "06/10/2018"
+    },
+    {
+      "name": "Guest",
+      "description": "06/10/2018"
+    },
+    {
+      "name": "Accountant",
+      "description": "06/10/2018"
+    }
+  ]

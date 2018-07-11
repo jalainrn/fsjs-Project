@@ -1,0 +1,47 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title SB Admin - Start Bootstrap Template
+
+    include ../public/frame/css/core
+
+    // Page level plugin CSS
+    link(href='frame/css/dataTables.bootstrap4.css', rel='stylesheet', type="text/css")
+
+    include ../public/frame/css/custom
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include ../public/frame/includes/navbar.pug
+    .content-wrapper
+      .container-fluid
+        //- include menu
+    
+      
+      // /.container-fluid
+      // /.content-wrapper
+
+      include ../public/frame/includes/footer
+
+      include ../public/frame/includes/scroll-to-top
+
+      include ../public/frame/modals/logout
+
+      include ../public/frame/js/core
+
+      //- // Page level plugin JavaScript
+      //- script(src='vendor/chart.js/Chart.min.js')
+      script(src='frame/js/jquery.dataTables.js')
+      script(src='frame/js/dataTables.bootstrap4.js')
+
+      //- include includes/js/custom.pug
+
+      //- // Custom scripts for this page
+      script(src='frame/js/sb-admin-datatables.min.js')
+      //- script(src='js/sb-admin-charts.min.js')
