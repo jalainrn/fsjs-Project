@@ -1,0 +1,19 @@
+include index
+    
+    .card.mb-3
+        .card-header
+            i.fa.fa-table
+            |  Role Edit
+        .card-body
+            .table-responsive#contentHolderRole
+        
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        script.
+            $(document).ready(function(){
+                var roles = addEditRole(`#{roleId}`)
+                $("submitRole").click(function(event){
+                    event.preventDefault()
+                    return false;
+                });
+            });
+        script(src='../js/wwRoles.js')  

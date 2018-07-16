@@ -5,8 +5,16 @@ const Role = require("../model/role.model.js");
 function getRoles (req, res) {
     Role.find({}, (err, roles) => {
         if (err) return res.status(500).send({message: `Request error: ${err}`})
-        console.log('here');
+        console.log('here controller');
         res.json(roles).status(200);
+    });
+};
+function getRolesJSON () {
+    return Role.find({}, (err, roles) => {
+        //if (err) return {message: `Request error: ${err}`}
+        if (err) return {message: `Request error: ${err}`}
+        // console.log(`This is from getRolesJSON - ${roles}`);
+        return roles;
     });
 };
 
@@ -62,5 +70,6 @@ module.exports = {
     getRole,
     insRole,
     updRole,
-    delRole
+    delRole,
+    getRolesJSON
 }
