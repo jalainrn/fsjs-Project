@@ -26,6 +26,7 @@ function getRole (req, res) {
       if(err) return res.status(500).send({message: `Request error: ${err}`})
       if(!role) return res.status(404).end({message: `Could not find role '${roleId}'`})
 
+      console.log(role);
       res.json(role).status(200);
     });
 };
@@ -33,8 +34,13 @@ function getRole (req, res) {
 //POST Role
 function insRole (req, res) {
     let role = new Role(req.body);
+    // role._id = null;
     role.save((err, role) => {
-        if(err) return next(err);
+        if (err) {
+            console.error(err)
+            return res.status(500).json(err)
+        }
+        // if(err) return res.send(err);
         
         res.json(role).status(201);
     });

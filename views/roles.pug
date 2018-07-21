@@ -3,7 +3,8 @@ include index
     .card.mb-3
         .card-header
             i.fa.fa-table
-            |  Work With Roles
+            |  Work With Roles 
+            a(class='btn btn-primary btn-space float-right' href="roles/add") Add
         .card-body
             .table-responsive
                 table#dataTable.table.table-bordered(width='100%', cellspacing='0')
@@ -24,17 +25,21 @@ include index
                             each role in roles
                                 tr
                                     td #{role.name}
-                                    td #{role.created_at}
-                                    td #{role.updated_at}
+                                    td.dateToReformat #{role.created_at}
+                                    td.dateToReformat #{role.updated_at.toLocaleDateString('en-US')}
                                     td
-                                        button(type='button' class='btn btn-warning btn-space') Edit
+                                        a(class='btn btn-warning btn-space' href="roles/" + role._id) Edit
                                         button(type='button' class='btn btn-danger btn-space' onclick="handleDeleteRoleClick(this)" roleId=role._id) Delete
         //- .card-footer.small.text-muted
         //- | Updated yesterday at 11:59 PM
 
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-        //- script.
-        //-     $(document).ready(function(){
-        //-         var roles = refreshRoleList()
-        //-     });
+        //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        script.
+            $(document).ready(function(){
+                //-         var roles = refreshRoleList()
+                $('.dateToReformat').each(function() {
+                    let currentDate = reformatingDate($(this).text());
+                    $(this).text(currentDate);
+                });
+            });
         script(src='js/wwRoles.js')  
