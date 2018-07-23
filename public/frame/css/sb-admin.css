@@ -158,6 +158,10 @@ a.btn:hover { border-radius: .25rem; color: #fff;}
   width: 10%;
 }
 
+.dateToReformat {
+  display: none;  
+}
+
 @media (min-width: 992px) {
   #mainNav .navbar-brand {
     width: 250px;

@@ -26,7 +26,6 @@ function getRole (req, res) {
       if(err) return res.status(500).send({message: `Request error: ${err}`})
       if(!role) return res.status(404).end({message: `Could not find role '${roleId}'`})
 
-      console.log(role);
       res.json(role).status(200);
     });
 };
@@ -50,9 +49,10 @@ function insRole (req, res) {
 function updRole (req, res) {
     let { roleId } = req.params;
     let update = req.body;
+    update.updated_at = new Date();
     Role.findByIdAndUpdate(roleId, update, (err, role) => {
       if(err) return res.status(500).send({message: `Error when updating. Error: ${err}.`})
-  
+        
       res.status(200).send({ role: role });
     });
 };

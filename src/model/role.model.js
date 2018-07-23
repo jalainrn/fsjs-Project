@@ -5,17 +5,16 @@ const Schema = mongoose.Schema;
 
 const RoleSchema = new Schema({
     name: String,
-    created_at: { type: Date, default: Date.now },
-    updated_at: { type: Date, default: Date.now }
+    created_at: { type: Date, default: Date.now() },
+    updated_at: { type: Date, default: Date.now() }
 });
 
-mongoose.model('Role', RoleSchema);
-
+// mongoose.model('Role', RoleSchema);
 RoleSchema.method("update", function(updates, callback) {
     Object.assign(this, updates, {updatedAt: new Date()});
+    console.log('I am trying to update the DATE');
     this.parent().save(callback);
 });
-
 
 
 const Role = mongoose.model("Role", RoleSchema);

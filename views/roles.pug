@@ -11,22 +11,24 @@ include index
                     thead
                         tr
                             th Name
-                            th Created-at
-                            th Updated-at
+                            th(class='d-none d-sm-table-cell') Created-at
+                            th(class='d-none d-md-table-cell') Updated-at
                             th
                     tfoot
                         tr
                             th Name
-                            th Created at
-                            th Updated at
+                            th(class='d-none d-sm-table-cell') Created-at
+                            th(class='d-none d-md-table-cell') Updated-at
                             th
                     
                     tbody#contentHolderRoles
                             each role in roles
                                 tr
                                     td #{role.name}
-                                    td.dateToReformat #{role.created_at}
-                                    td.dateToReformat #{role.updated_at.toLocaleDateString('en-US')}
+                                    td(class='d-none d-sm-table-cell')
+                                        span.dateToReformat #{role.created_at}
+                                    td(class='d-none d-md-table-cell')
+                                        span.dateToReformat #{role.updated_at.toLocaleDateString('en-US')}
                                     td
                                         a(class='btn btn-warning btn-space' href="roles/" + role._id) Edit
                                         button(type='button' class='btn btn-danger btn-space' onclick="handleDeleteRoleClick(this)" roleId=role._id) Delete
@@ -36,10 +38,10 @@ include index
         //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
         script.
             $(document).ready(function(){
-                //-         var roles = refreshRoleList()
                 $('.dateToReformat').each(function() {
                     let currentDate = reformatingDate($(this).text());
                     $(this).text(currentDate);
+                    $(this).show();
                 });
             });
         script(src='js/wwRoles.js')  
